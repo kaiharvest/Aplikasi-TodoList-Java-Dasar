@@ -7,12 +7,13 @@ public class AplikasiTodoList {
 
 	public static void main(String[] args) {
 
-		testInput();
+		testViewShowTodoList();
 
 	}
 
 	// menampilkan todolist
 	public static void showTodoList() {
+		System.out.println("TODOLIST");
 		for (var i = 0; i < model.length; i++) {
 			var todo = model[i];
 			var no = i + 1;
@@ -128,21 +129,36 @@ public class AplikasiTodoList {
 
 	// menampilkan view todolist
 	public static void viewShowTodoList() {
-		showTodoList();
+		while (true) {
+			showTodoList();
 
-		System.out.println("Menu : ");
-		System.out.println("1. Tambah ");
-		System.out.println("2. Hapus ");
+			System.out.println("Menu: ");
+			System.out.println("1. Tambah");
+			System.out.println("2. Hapus");
+			System.out.println("x. Keluar");
 
-		var input = input("Pilih");
-		if (input.equals("1")) {
-			viewAddTodoList();
-		} else if (input.equals("2")) {
-			viewRemoveTodoList();
-		} else {
-			System.out.println("Pilihan tidak dimengerti");
+			var input = input("Pilih");
+			if (input.equals("1")) {
+				viewAddTodoList();
+			} else if (input.equals("2")) {
+				viewRemoveTodoList();
+			} else if (input.equals("x")) {
+				break;
+			} else {
+				System.out.println("Pilihan tidak dimengerti");
+			}
 		}
 
+
+	}
+
+	public static void testViewShowTodoList() {
+		addTodoList("satu");
+		addTodoList("dua");
+		addTodoList("tiga");
+		addTodoList("empat");
+		addTodoList("lima");
+		viewShowTodoList();
 	}
 
 	// menampilkan view add todolist
