@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class AplikasiTodoList {
 
 	public static String[] model = new String[10];
@@ -7,7 +5,7 @@ public class AplikasiTodoList {
 
 	public static void main(String[] args) {
 
-		testViewShowTodoList();
+		testViewAddTodoList();
 
 	}
 
@@ -163,7 +161,24 @@ public class AplikasiTodoList {
 
 	// menampilkan view add todolist
 	public static void viewAddTodoList() {
+		System.out.println("KEMBALI KE TODOLIST");
 
+		var todo = input("Todo (x jika batal)");
+		if (todo.equals("x")) {
+			// batal
+		} else {
+			addTodoList(todo);
+		}
+	}
+
+	public static void testViewAddTodoList() {
+		addTodoList("satu");
+		addTodoList("dua");
+		addTodoList("tiga");
+
+		viewAddTodoList();
+
+		showTodoList();
 	}
 
 	// menampilkan view remove todolist
