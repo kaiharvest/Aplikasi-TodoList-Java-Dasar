@@ -5,7 +5,7 @@ public class AplikasiTodoList {
 
 	public static void main(String[] args) {
 
-		testViewAddTodoList();
+		viewShowTodoList();
 
 	}
 
@@ -183,6 +183,31 @@ public class AplikasiTodoList {
 
 	// menampilkan view remove todolist
 	public static void viewRemoveTodoList() {
+		System.out.println("Menghapus TODOLIST ");
 
+		var number = input("Nomor yang dihapus: (x jika batal)");
+		if (number.equals("x")) {
+			//batal
+		} else {
+			boolean success = removeTodoList(Integer.valueOf(number));
+
+			if (!success) {
+				System.out.println("gagal meghapus todolist: " + number);
+			}
+		}
 	}
+
+
+	public static void testViewRemoveTodoList() {
+		addTodoList("satu");
+		addTodoList("dua");
+		addTodoList("tiga");
+
+		showTodoList();
+
+		viewRemoveTodoList();
+
+		showTodoList();
+	}
+
 }
