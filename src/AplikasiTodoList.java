@@ -92,14 +92,19 @@ public class AplikasiTodoList {
 		addTodoList("satu");
 		addTodoList("dua");
 		addTodoList("tiga");
+		addTodoList("empat");
+		addTodoList("lima");
 
 		var resut = removeTodoList(20);
 		System.out.println(resut);
 
-		resut = removeTodoList(4);
+		resut = removeTodoList(7);
 		System.out.println(resut);
 
 		resut = removeTodoList(2);
+		System.out.println(resut);
+
+		resut = removeTodoList(5);
 		System.out.println(resut);
 
 		showTodoList();
