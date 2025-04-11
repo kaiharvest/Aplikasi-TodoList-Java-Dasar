@@ -28,7 +28,8 @@ public class TodoListServiceImpl implements ToDoListService{
 
 	@Override
 	public void addToDoList(String todo) {
-
+		TodoList todoList = new TodoList(todo);
+		todoListRepository.add(todoList);
 	}
 
 	@Override
