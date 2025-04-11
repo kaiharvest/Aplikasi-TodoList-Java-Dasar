@@ -3,7 +3,7 @@ package service;
 import entity.TodoList;
 import repository.TodoListRepository;
 
-public class TodoListServiceImpl implements ToDoListService{
+public class TodoListServiceImpl implements TodoListService {
 
 	private TodoListRepository todoListRepository;
 
@@ -12,7 +12,7 @@ public class TodoListServiceImpl implements ToDoListService{
 	}
 
 	@Override
-	public void showToDoList() {
+	public void showTodoList() {
 		TodoList[] model = todoListRepository.getAll();
 
 		System.out.println("TODOLIST");
@@ -27,13 +27,13 @@ public class TodoListServiceImpl implements ToDoListService{
 	}
 
 	@Override
-	public void addToDoList(String todo) {
+	public void addTodoList(String todo) {
 		TodoList todoList = new TodoList(todo);
 		todoListRepository.add(todoList);
 	}
 
 	@Override
-	public void removeToDoList(Integer number) {
+	public void removeTodoList(Integer number) {
 
 	}
 }

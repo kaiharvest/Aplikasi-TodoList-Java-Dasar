@@ -1,14 +1,15 @@
 package test.service;
 
 import entity.TodoList;
+import repository.TodoListRepository;
 import repository.TodoListRepositoryImpl;
-import service.ToDoListService;
+import service.TodoListService;
 import service.TodoListServiceImpl;
 
 public class TodoListServiceTest {
 	public static void main(String[] args) {
 
-		testShowTodoList();
+		testAddTodoList();
 
 	}
 
@@ -17,8 +18,19 @@ public class TodoListServiceTest {
 		todoListRepository.data[0] = new TodoList("Belajar Java Dasar");
 		todoListRepository.data[1] = new TodoList("Belajar Java OOP");
 		todoListRepository.data[2] = new TodoList("Belajar Java Standart Class");
-		ToDoListService toDoListService = new TodoListServiceImpl(todoListRepository);
+		TodoListService toDoListService = new TodoListServiceImpl(todoListRepository);
 
-		toDoListService.showToDoList();
+		toDoListService.showTodoList();
+	}
+
+	public static void testAddTodoList() {
+		TodoListRepository todoListRepository = new TodoListRepositoryImpl();
+		TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
+
+		todoListService.addTodoList("Belajar java Dasar");
+		todoListService.addTodoList("Belajar java OOP");
+		todoListService.addTodoList("Belajar java Standar Classes");
+
+		todoListService.showTodoList();
 	}
 }
